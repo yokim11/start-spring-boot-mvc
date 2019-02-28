@@ -1,4 +1,4 @@
-package com.example;
+package com.example.common.config;
 
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.context.annotation.Bean;

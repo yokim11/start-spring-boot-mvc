@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.controller;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
