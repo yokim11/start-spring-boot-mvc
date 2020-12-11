@@ -1,16 +1,14 @@
 package com.example.controller;
 
+import com.example.domain.MemberVO;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
-
-import com.example.domain.MemberVO;
 
 @Controller
 public class SampleController {
@@ -28,10 +26,11 @@ public class SampleController {
 
 	@GetMapping("/sample2")
 	public String sample02(Model model) {
-		List<MemberVO> list = new ArrayList<>();
-		IntStream.range(1, 11).forEach(i -> {
-			list.add(new MemberVO(i, "u0" + i, "p0" + i, "홍길동" + i, new Timestamp(System.currentTimeMillis())));
+		List<MemberVO> list = new ArrayList<MemberVO>();
+		IntStream.range(1, 11).forEach(mno -> {
+			list.add(new MemberVO(mno, "u0" + mno, "p0" + mno, "홍길동" + mno, new Timestamp(System.currentTimeMillis())));
 		});
+
 		model.addAttribute("list", list);
 		return "sample2";
 	}
